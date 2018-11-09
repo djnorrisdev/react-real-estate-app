@@ -1,0 +1,290 @@
+#filter {
+    background: $grey;
+    width: 30%;
+    max-width: 300px;
+    float: left;
+}
+
+.inside {
+    padding: 20px;
+}
+
+h4 {
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+select {
+    background: transparent;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1b1b1b;
+    display: block;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    
+    &.filter-selects {
+        width: 100%;
+    }
+}
+
+.filters {
+
+    .title {
+        font-size: 0.9rem;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    input[type="text"] {
+        width: 45%;
+        display: inline-block;
+        margin-right: 2.5%;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        font-size: 1rem;
+        padding: 0.4rem;
+    }
+}
+
+.extras {
+
+    label {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+
+        input[type="checkbox"] {
+            float: right;
+        }
+    }
+}
+
+#content-area {
+    overflow: auto;
+    width: 100%;
+    min-height: 100vh;
+}
+
+#Listings {
+  width: 70%;
+  float: left;
+  padding: 15px;
+  background: $offWhite;
+
+  .search-area {
+
+    input[type="text"] {
+        width: 70%;
+        background: transparent;
+        font-size: 2rem;
+        font-weight: 100;
+        color: $lightGrey;
+        border: none;
+        border-bottom: 2px solid $darkGrey;
+        margin-bottom: 20px;
+    }
+  }
+
+  .sortby-area {
+    margin-bottom: 20px;
+
+    .results {
+        display: inline-block;
+        font-size: 0.8rem;
+        color: $darkGrey;
+    }
+
+    .sort-options {
+        float: right;
+
+        select {
+            font-size: 0.9rem;
+            font-weight: 300;
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        .view {
+            display: inline-block;
+
+            .fas {
+               font-size: 1.5rem;
+               margin-right: 15px;
+            }
+        }
+    }
+  }
+}
+
+.listings-results {
+    width: 100%;
+
+    .listing {
+        background: #ffffff;
+        margin: 30px 0 60px;
+        border-radius: 5px;
+        box-shadow: 0 0 54px -4px rgba(224,224,224,1);
+    }
+
+    .listing-img {
+        padding: 15px;
+        color: white;
+        position: relative;
+        background: url('https://cdn.houseplans.com/product/dd8ul24a7dogeoi8co8iagv341/w300x200.png?v=8') no-repeat center center;
+        background-size: cover;
+        min-height: 200px;
+        border-radius: 5px 5px 0 0;
+
+        &:hover {
+
+            .details {
+                opacity: 1;
+            }
+
+            .address {
+                opacity: 0;
+            }
+        }
+
+        .address {
+            position: absolute;
+            bottom: 20px;
+            opacity: 1;
+            transition: all .5s ease-in-out;
+        }
+
+        .details {
+            opacity: 0;
+            transition: all .5s ease-in-out;
+            padding: 30px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(135deg, rgba(78,2,229, 0.8) 0%, rgba(157,28,237, 0.8) 100%);
+            border-radius: 5px 5px 0 0;
+
+            .user-img {
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                border: 2px solid white;
+                display: inline-block;
+                background: url('https://d3iw72m71ie81c.cloudfront.net/female-91.jpg') no-repeat center center;
+                background-size: cover;
+            }
+
+            .user-details {
+                vertical-align: top;
+                display: inline-block;
+
+                .user-name {
+                    display: block;
+                    font-weight: 300;
+                    font-size: 0.9rem;
+                    margin-top: 3px;
+                    margin-bottom: 5px;
+                    color: rgba(255,255,255, 1);
+                }
+
+                .post-date {
+                    display: block;
+                    font-size: 0.9rem;
+                    color: rgba(255,255,255, 0.7);
+                }
+            }
+
+            .listing-details {
+                margin: 20px 0 10px 0;
+
+                .fas, .far {
+                    font-size: 1.1rem;
+                    margin-right: 15px;
+                }
+
+                span {
+                    font-size: 0.8rem;
+                    font-weight: 300;
+                    vertical-align: top;
+                    position: relative;
+                    top: 3px;
+                }
+
+                .floor-space {
+                    margin-bottom: 10px;
+                }
+            }
+        }
+    }
+
+    .bottom-info {
+        padding: 15px;
+
+        .price {
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 10px;
+            color: $darkGrey;
+        }
+
+        .location {
+            font-size: 1rem;
+            display: block;
+            color: $lightGrey;
+        }
+    }
+}
+
+.view-btn {
+    max-width: 150px;
+    background: #222222;
+    padding: 8px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+
+    &:hover {
+        background: $pink;
+        transition: background .4s ease-in-out;
+    }
+}
+.col-md-3 {
+    width: 25%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 15px;
+}
+
+.col-md-9 {
+    width: 75%;
+    display: inline-block;
+}
+
+#pagination {
+    text-align: center;
+
+    .pages {
+        margin: 0 auto;
+        display: inline-block;
+        background: white;
+        box-shadow: 0 9px 54px -4px rgba(224,224,224,1);
+        cursor: pointer;
+
+        li {
+            padding: 20px 30px;
+            display: inline-block;
+
+            &:active, &:hover {
+                color: white;
+                font-weight: 700;
+                background: $pink;
+                transition: all .4s ease-in-out;
+            }
+        }
+    }
+}
