@@ -4,7 +4,49 @@ export default class Filter extends Component {
   constructor () {
     super()
     this.state = {
-      name: 'Joe'
+    }
+    this.cities = this.cities.bind(this)
+    this.homeTypes = this.homeTypes.bind(this)
+    this.bedrooms = this.bedrooms.bind(this)
+  }
+
+  componentWillMount() {
+    this.props.populateAction()
+  }
+
+  cities() {
+    if (this.props.globalState.populateFormsData.cities != undefined) {
+      const {cities} = this.props.globalState.populateFormsData
+      // console.log(cities)
+      return cities.map((item) => {
+        return(
+        <option key={item} value={item}>{item}</option>
+        )
+      })
+    }
+  }
+
+  homeTypes() {
+    if (this.props.globalState.populateFormsData.homeTypes != undefined) {
+      const {homeTypes} = this.props.globalState.populateFormsData
+      // console.log(homeTypes)
+      return homeTypes.map((item) => {
+        return(
+        <option key={item} value={item}>{item}</option>
+        )
+      })
+    }
+  }
+
+  bedrooms() {
+    if (this.props.globalState.populateFormsData.bedrooms != undefined) {
+      const {bedrooms} = this.props.globalState.populateFormsData
+      // console.log(bedrooms)
+      return bedrooms.map((item) => {
+        return(
+        <option key={item} value={item}>{item}+ BR</option>
+        )
+      })
     }
   }
 
@@ -12,30 +54,26 @@ export default class Filter extends Component {
     return (<section id="filter">
       <div className="inside">
         <h4>Filter</h4>
-        <select name="neighborhood" className="filter-selects" onChange={this.props.change}>
-          <option value="Ridgewood">Ridgewood</option>
-          <option value="Richmond">Richmond</option>
-          <option value="Annapolis">Annapolis</option>
-          <option value="Laurel">Laurel</option>
+        <label htmlFor="city">City</label>
+        <select name="city" className="filters city" onChange={this.props.change}>
+          <option value="All">All</option>
+          {this.cities()}
         </select>
-        <select name="housetype" className="filter-selects" onChange={this.props.change}>
-          <option value="Rancher">Rancher</option>
-          <option value="Single-Family">Single Family</option>
-          <option value="Apartment">Apartment</option>
-          <option value="Condo">Condo</option>
+        <label htmlFor="homeType">Home Type</label>
+        <select name="homeType" className="filters homeType" onChange={this.props.change}>
+          <option value="All">All</option>
+          {this.homeTypes()}
         </select>
-        <select name="bedrooms" className="filter-selects" onChange={this.props.change}>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
+        <label htmlFor="bedrooms">Bedrooms</label>
+        <select name="bedrooms" className="filters bedrooms" onChange={this.props.change}>
+        {this.bedrooms()}
         </select>
         <div className="filters price">
           <span className="title">Price</span>
           <input type="text" name="min_price" className="min-price" value={this.props.globalState.min_price} onChange={this.props.change}/>
           <input type="text" name="max_price" className="max-price" value={this.props.globalState.max_price} onChange={this.props.change}/>
         </div>
-        <div className="filters floor-space">
+        <div className="filters floor_space">
           <span className="title">Floor Space</span>
           <input type="text" name="min_floor_space" className="min-floor-space" value={this.props.globalState.min_floor_space} onChange={this.props.change}/>
           <input type="text" name="max_floor_space" className="max-floor-space" value={this.props.globalState.max_floor_space} onChange={this.props.change}/>
@@ -56,7 +94,7 @@ export default class Filter extends Component {
           </label>
           <label htmlFor="extras">
             <span>Gym</span>
-            <input name="checkbox" value="gym" type="checkbox" onChange={this.props.change}/>
+            <input name="gym" value="gym" type="checkbox" onChange={this.props.change}/>
           </label>
         </div>
       </div>  

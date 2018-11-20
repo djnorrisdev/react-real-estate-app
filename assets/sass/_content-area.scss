@@ -25,7 +25,7 @@ select {
     margin-bottom: 25px;
     border-radius: 5px;
     
-    &.filter-selects {
+    &.filters {
         width: 100%;
     }
 }
@@ -91,6 +91,10 @@ select {
   .sortby-area {
     margin-bottom: 20px;
 
+    .sortby {
+        margin-bottom: 0;
+    }
+
     .results {
         display: inline-block;
         font-size: 0.8rem;
@@ -134,7 +138,7 @@ select {
         color: white;
         position: relative;
         background: url('https://cdn.houseplans.com/product/dd8ul24a7dogeoi8co8iagv341/w300x200.png?v=8') no-repeat center center;
-        background-size: cover;
+        background-size: cover !important;
         min-height: 200px;
         border-radius: 5px 5px 0 0;
 
@@ -252,17 +256,6 @@ select {
         background: $pink;
         transition: background .4s ease-in-out;
     }
-}
-.col-md-3 {
-    width: 25%;
-    display: inline-block;
-    vertical-align: top;
-    padding: 0 15px;
-}
-
-.col-md-9 {
-    width: 75%;
-    display: inline-block;
 }
 
 #pagination {
